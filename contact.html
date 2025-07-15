@@ -8,13 +8,22 @@
 </head>
 <body>
   <h2>Contact Current Development Ltd</h2>
-  <form method="POST" action="#">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <textarea name="message" placeholder="Your Message" required></textarea>
-    <button type="submit">Send Message</button>
-    <input type="text" name="company" style="display:none">
-  </form>
+ <form action="https://formsubmit.co/info@currentdevelopment.co.uk" method="POST">
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="email" placeholder="Your Email" required>
+  <textarea name="message" placeholder="Your Message" required></textarea>
+
+  <!-- Spam protection (honeypot) -->
+  <input type="text" name="_honey" style="display:none">
+
+  <!-- Disable CAPTCHA (optional) -->
+  <input type="hidden" name="_captcha" value="false">
+
+  <!-- Redirect after successful submission -->
+  <input type="hidden" name="_next" value="https://currentdevelopment.co.uk/thank-you.html">
+
+  <button type="submit">Send Message</button>
+</form>
   
   <img src="assets/qr-code.jpg" alt="Scan to contact" class="qr-code">
 </body>
